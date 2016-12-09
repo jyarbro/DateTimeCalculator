@@ -142,6 +142,9 @@ namespace DateTimeCalculator {
 			return new DateTime(nextDate.Year, nextDate.Month, nextDate.Day);
 		}
 
+		/// <summary>
+		/// Returns the next occuring last DOW from a base date (i.e. next occurrence of last tuesday of a month from DateTime.Now)
+		/// </summary>
 		DateTime NextLastDOW(DayOfWeek dayOfWeek) {
 			var baseDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1).AddMonths(1).AddDays(-1);
 			var nextDate = baseDate.AddDays((dayOfWeek - baseDate.DayOfWeek - 7) % 7);
